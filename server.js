@@ -9,7 +9,9 @@ students.
 Name: Avneet Kaur
 Student ID: 164275216
 Date: 02/06/2023
-Cyclic Web App URL: https://ill-teal-salmon-wig.cyclic.app
+Cyclic Web App URL: https://dull-red-haddock-hat.cyclic.app
+I don't why my cyclic link is not working but you can check my work on github,
+I left it public.
 GitHub Repository URL: https://github.com/avneet-kaur9/web322-app
 
 ********************************************************************************/
