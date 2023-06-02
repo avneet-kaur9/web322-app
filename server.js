@@ -1,26 +1,31 @@
+/*********************************************************************************
 
+WEB322 – Assignment 02
+I declare that this assignment is my own work in accordance with Seneca  Academic 
+Policy.  No part *  of this assignment has been copied manually or electronically 
+from any other source (including 3rd party web sites) or distributed to other 
+students.
+
+Name: Avneet Kaur
+Student ID: 164275216
+Date: 02/06/2023
+Cyclic Web App URL: https://ill-teal-salmon-wig.cyclic.app
+GitHub Repository URL: https://github.com/avneet-kaur9/web322-app
+
+********************************************************************************/
 const express = require("express");
+const path = require("path");
+const store = require("./store-service");
+
 const app = express();
 const PORT = process.env.PORT || 8080;
-const store = require("./store-service");
-const path = require("path");
-store
-  .initialize()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Express http server listening on: ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 app.use(express.static(__dirname + "/public"));
 
-//redirect user to /about route
 app.get("/", (req, res) => {
   res.redirect("/about");
 });
+
 app.get("/about", (req, res) => {
   res.sendFile(__dirname + "/views/about.html");
 });
@@ -61,7 +66,18 @@ app.get("/categories", (req, res) => {
     });
 });
 
+// 404 route handler
 app.use((req, res) => {
-  res.status(404).send("Page Not Found!");
+  res.status(404).send("Page Not Found");
 });
 
+store
+  .initialize()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Express http server listening on: ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
