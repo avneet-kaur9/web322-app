@@ -6,7 +6,7 @@ been copied manually or electronically from any other source (including 3rd part
 Name: Avneet Kaur
 Student ID: 164275216
 Date: 12/06/2023
-Cyclic Web App URL: https://helpful-slip-ox.cyclic.app
+Cyclic Web App URL: https://rich-plum-bull-coat.cyclic.app/
 GitHub Repository URL: https://github.com/avneet-kaur9/web322-app.git
 
 ********************************************************************************/
