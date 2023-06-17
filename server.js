@@ -7,7 +7,7 @@ Name: Avneet Kaur
 Student ID: 164275216
 Date: 12/06/2023
 Cyclic Web App URL: https://helpful-slip-ox.cyclic.app
-GitHub Repository URL: https://github.com/Kirandeep247/web322-app.git
+GitHub Repository URL: https://github.com/avneet-kaur9/web322-app.git
 
 ********************************************************************************/
 
