@@ -66,7 +66,10 @@ function addItem(itemData) {
     itemData.published = itemData.published || false;
 
     itemData.id = items.length + 1;
-    itemData.postDate = new Date().toISOString().slice(0, 10);
+    const date = new Date();
+    // YYYY-MM-DD
+    const postDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDay()}`;
+    itemData.postDate = postDate;
     items.push(itemData);
 
     resolve(itemData);
@@ -108,6 +111,23 @@ function getItemById(id) {
   });
 }
 
+function getPublishedItemsByCategory (category) {
+  return new Promise((resolve, reject) => {
+    if (!items || items.length === 0) {
+      reject("no results returned");
+    } else {
+      const publishedItemsByCategory = items.filter(
+        (item) => item.published === true && item.category == category
+      );
+      if (publishedItemsByCategory.length === 0) {
+        reject("no results returned");
+      } else {
+        resolve(publishedItemsByCategory);
+      }
+    }
+  });
+};
+
 const storeService = {
   initialize,
   getAllItems,
@@ -117,6 +137,7 @@ const storeService = {
   getItemsByCategory,
   getItemsByMinDate,
   getItemById,
+  getPublishedItemsByCategory
 };
 
 module.exports = storeService;
